@@ -2,7 +2,7 @@ import Todo from "./Pages/Todo";
 
 const App = () => {
     return (
-        <div className="app">
+        <div className="container">
             <Todo/>
         </div>
     );

@@ -8,16 +8,27 @@ const CreateToDo = () => {
     const taskInput = useRef();
 
     return (
-        <>
-            <input
-                ref={taskInput}
-                type="text"
-                placeholder="Create a new task"
-            />
-            <button onClick={() => dispatch(AddTodo(taskInput.current.value))}>
-                Add New Task
-            </button>
-        </>
+        <div className="card">
+            <div className="card-header text-center">
+                <h1>Todo App With Redux</h1>
+            </div>
+            <div className="card-body">
+                <div className="input-group">
+                    <input className="form-control"
+                        ref={taskInput}
+                        type="text"
+                        placeholder="Create a new task"
+                    />
+                    <button className="btn btn-success"
+                        onClick={() =>
+                            dispatch(AddTodo({task:taskInput.current.value,completed: false}))
+                        }
+                    >
+                        Add New Task
+                    </button>
+                </div>
+            </div>
+        </div>
     );
 };
 
